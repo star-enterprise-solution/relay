@@ -149,7 +149,7 @@ import type { Agent } from "@kilocode/sdk/v2/client"
 import { configFeatures } from "./features"
 import { createAutoApproveBridge } from "./kilo-provider/auto-approve"
 import type { KiloProviderOptions } from "./kilo-provider/options"
-import { fetchKiloEmbeddingModelCatalog } from "@kilocode/kilo-gateway"
+import { fetchKiloEmbeddingModelCatalog } from "@relay/llm-provider"
 import { stopSessionProcesses } from "./kilo-provider/background-process"
 import {
   buildIndexingSettingsMessage,

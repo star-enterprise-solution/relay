@@ -1,4 +1,4 @@
-import type { KilocodeNotification } from "@kilocode/kilo-gateway"
+import type { KilocodeNotification } from "@relay/llm-provider"
 
 export namespace News {
   export const key = "news_read_ids"

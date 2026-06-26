@@ -1,4 +1,4 @@
-import { fetchKiloEmbeddingModelCatalog, resolveKiloGatewayBaseUrl } from "@kilocode/kilo-gateway"
+import { fetchKiloEmbeddingModelCatalog, resolveKiloGatewayBaseUrl } from "@relay/llm-provider"
 import type { Config, IndexingConfig, KiloEmbeddingModelCatalog } from "@kilocode/sdk/v2"
 import * as Log from "@opencode-ai/core/util/log"
 import { createMemo, type Accessor } from "solid-js"

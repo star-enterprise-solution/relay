@@ -47,14 +47,14 @@ describe("indexing plugin detection", () => {
   })
 
   test("ignores unrelated plugin specifiers", () => {
-    expect(isIndexingPlugin("@kilocode/kilo-gateway")).toBe(false)
+    expect(isIndexingPlugin("@relay/llm-provider")).toBe(false)
     expect(isIndexingPlugin("file:///tmp/.opencode/plugin/index.js")).toBe(false)
-    expect(hasIndexingPlugin(["@kilocode/kilo-gateway", "foo@1.0.0"])).toBe(false)
+    expect(hasIndexingPlugin(["@relay/llm-provider", "foo@1.0.0"])).toBe(false)
   })
 
   test("detects indexing plugin in merged plugin lists", () => {
     expect(
-      hasIndexingPlugin(["@kilocode/kilo-gateway", "file:///tmp/node_modules/@kilocode/kilo-indexing/index.js"]),
+      hasIndexingPlugin(["@relay/llm-provider", "file:///tmp/node_modules/@kilocode/kilo-indexing/index.js"]),
     ).toBe(true)
   })
 })

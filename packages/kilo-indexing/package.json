@@ -34,7 +34,7 @@
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "3.1005.0",
     "@aws-sdk/credential-provider-ini": "3.972.31",
-    "@kilocode/kilo-gateway": "workspace:*",
+    "@relay/llm-provider": "workspace:*",
     "@kilocode/plugin": "workspace:*",
     "@lancedb/lancedb": "0.26.2",
     "@qdrant/js-client-rest": "1.17.0",

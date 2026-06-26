@@ -1,19 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@kilocode/kilo-gateway",
-  "version": "7.3.54",
+  "name": "@relay/llm-provider",
+  "version": "0.1.0",
   "type": "module",
   "license": "MIT",
-  "description": "Unified Kilo Gateway package for OpenCode - authentication, provider, and API integration",
+  "description": "OpenAI-compatible AI SDK provider that points at the Relay LiteLLM gateway. The client half of Relay's multi-provider routing — the gateway itself runs as a separate container (Helm chart or Railway). Used by the VS Code extension and the OpenCode CLI.",
   "keywords": [
-    "kilo",
-    "kilocode",
-    "opencode",
-    "auth",
-    "plugin",
-    "provider",
+    "relay",
     "ai",
-    "llm"
+    "llm",
+    "openai-compatible",
+    "litellm",
+    "ai-sdk",
+    "provider"
   ],
   "exports": {
     ".": "./src/index.ts",

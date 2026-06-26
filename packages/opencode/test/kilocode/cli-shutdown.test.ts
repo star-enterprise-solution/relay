@@ -30,7 +30,7 @@ mock.module("@kilocode/kilo-telemetry", () => ({
   },
 }))
 
-mock.module("@kilocode/kilo-gateway", () => ({
+mock.module("@relay/llm-provider", () => ({
   ENV_FEATURE: "KILO_FEATURE",
   ENV_VERSION: "KILO_VERSION",
   async migrateLegacyKiloAuth() {},

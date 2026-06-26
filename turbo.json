@@ -29,7 +29,7 @@
       "outputs": [".artifacts/unit/junit.xml"],
       "passThroughEnv": ["*"]
     },
-    "@kilocode/kilo-gateway#test:ci": {
+    "@relay/llm-provider#test:ci": {
       "outputs": [".artifacts/unit/junit.xml"]
     },
     "@kilocode/kilo-docs#build": {

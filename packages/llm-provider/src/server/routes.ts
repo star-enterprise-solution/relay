@@ -51,7 +51,7 @@ interface KiloRoutesDeps extends ImportDeps {
  *
  * @example
  * ```typescript
- * import { createKiloRoutes } from "@kilocode/kilo-gateway"
+ * import { createKiloRoutes } from "@relay/llm-provider"
  * import { Hono } from "hono"
  * import { describeRoute, validator, resolver } from "hono-openapi"
  * import z from "zod"

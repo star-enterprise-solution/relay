@@ -6,7 +6,7 @@ import { toIndexingConfigInput, type IndexingConfig } from "@kilocode/kilo-index
 import { hasIndexingPlugin } from "@kilocode/kilo-indexing/detect"
 import { IndexingStatus, disabledIndexingStatus } from "@kilocode/kilo-indexing/status"
 import { Telemetry } from "@kilocode/kilo-telemetry"
-import { fetchKiloEmbeddingModelCatalog } from "@kilocode/kilo-gateway"
+import { fetchKiloEmbeddingModelCatalog } from "@relay/llm-provider"
 import { Instance } from "@/kilocode/instance"
 import { Bus } from "@/bus"
 import { Config } from "@/config/config"
