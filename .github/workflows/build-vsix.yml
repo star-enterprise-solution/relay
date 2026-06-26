@@ -22,7 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
-      contents: read
+      # `contents: write` is needed by softprops/action-gh-release to
+      # create the draft Release object. It does NOT trigger
+      # publish.yml because publish.yml listens for
+      # `release: published` (not created/draft).
+      contents: write
     steps:
       - uses: actions/checkout@v5
         with:
@@ -77,12 +81,20 @@ jobs:
           retention-days: 30
           if-no-files-found: error
 
-      # Attach to GitHub Release when this run was triggered by a tag push.
-      # workflow_dispatch runs build the .vsix and stop — useful for
-      # manual smoke tests without cutting a release.
-      - name: Attach .vsix to GitHub Release
+      # Attach to a DRAFT GitHub Release. publish.yml listens to
+      # `release: published`, so leaving this as a draft means a tag push
+      # doesn't unintentionally fire the marketplace publish — someone
+      # has to manually promote the draft after smoke-testing the .vsix.
+      # That's the safety gate between "we have a build" and "we ship to
+      # users".
+      #
+      # workflow_dispatch runs (no tag) build the .vsix and stop — the
+      # `if:` filter skips this step for them.
+      - name: Attach .vsix to GitHub Release (draft)
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           files: relay.vsix
           fail_on_unmatched_files: true
+          draft: true
+          generate_release_notes: true
