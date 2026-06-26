@@ -28,7 +28,7 @@ interface MarketplaceMessage {
 }
 
 export class MarketplacePanelProvider implements vscode.Disposable {
-  public static readonly viewType = "kilo-code.new.marketplacePanel"
+  public static readonly viewType = "relay.new.marketplacePanel"
 
   private panel: vscode.WebviewPanel | undefined
   private project: string | null = null
@@ -145,7 +145,7 @@ export class MarketplacePanelProvider implements vscode.Disposable {
     if (!this.ready) return
     const info = this.connection.getServerInfo()
     if (info) {
-      const cfg = vscode.workspace.getConfiguration("kilo-code.new")
+      const cfg = vscode.workspace.getConfiguration("relay.new")
       this.post({
         type: "ready",
         serverInfo: info,

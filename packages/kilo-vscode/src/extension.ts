@@ -134,8 +134,8 @@ export function activate(context: vscode.ExtensionContext) {
   // The terminal intercepts all keystrokes unless the command is listed in
   // terminal.integrated.commandsToSkipShell, which only contains built-in
   // commands by default.
-  const skip = ["kilo-code.new.agentManagerOpen", "kilo-code.new.agentManager.showTerminal"]
-  if (process.platform === "darwin") skip.push("kilo-code.new.agentManager.runScript")
+  const skip = ["relay.new.agentManagerOpen", "relay.new.agentManager.showTerminal"]
+  if (process.platform === "darwin") skip.push("relay.new.agentManager.runScript")
   ensureCommandsSkipShell(skip)
 
   // Create KiloClaw chat provider for editor panel
@@ -217,7 +217,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register serializer so "Open in Tab" restores when VS Code restarts
   context.subscriptions.push(
-    vscode.window.registerWebviewPanelSerializer("kilo-code.new.TabPanel", {
+    vscode.window.registerWebviewPanelSerializer("relay.new.TabPanel", {
       deserializeWebviewPanel(panel: vscode.WebviewPanel) {
         const tabProvider = new KiloProvider(context.extensionUri, connectionService, context, {
           tabTitle: panelTitleHandler(panel),
@@ -277,7 +277,7 @@ export function activate(context: vscode.ExtensionContext) {
   const settingsViews = ["settingsPanel", "profilePanel"] as const
   for (const suffix of settingsViews) {
     context.subscriptions.push(
-      vscode.window.registerWebviewPanelSerializer(`kilo-code.new.${suffix}`, {
+      vscode.window.registerWebviewPanelSerializer(`relay.new.${suffix}`, {
         deserializeWebviewPanel(panel: vscode.WebviewPanel) {
           settingsEditorProvider.deserializePanel(panel)
           return Promise.resolve()
@@ -305,7 +305,7 @@ export function activate(context: vscode.ExtensionContext) {
   )
 
   context.subscriptions.push(
-    vscode.window.registerWebviewPanelSerializer("kilo-code.new.SubAgentViewerPanel", {
+    vscode.window.registerWebviewPanelSerializer("relay.new.SubAgentViewerPanel", {
       deserializeWebviewPanel(panel: vscode.WebviewPanel) {
         // Sub-agent viewer requires a session ID that can't be recovered
         // after restart, so dispose the stale panel cleanly.
@@ -327,86 +327,86 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register toolbar button command handlers
   context.subscriptions.push(
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.plusButtonClicked", () => {
-      track("new_task", "kilo-code.new.plusButtonClicked")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.plusButtonClicked", () => {
+      track("new_task", "relay.new.plusButtonClicked")
     }),
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.historyButtonClicked", () => {
-      track("history", "kilo-code.new.historyButtonClicked")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.historyButtonClicked", () => {
+      track("history", "relay.new.historyButtonClicked")
     }),
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.agentManagerOpen", () => {
-      track("agent_manager", "kilo-code.new.agentManagerOpen")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.agentManagerOpen", () => {
+      track("agent_manager", "relay.new.agentManagerOpen")
     }),
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.kiloClawOpen", () => {
-      track("kiloclaw", "kilo-code.new.kiloClawOpen")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.kiloClawOpen", () => {
+      track("kiloclaw", "relay.new.kiloClawOpen")
     }),
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.marketplaceButtonClicked", () => {
-      track("marketplace", "kilo-code.new.marketplaceButtonClicked")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.marketplaceButtonClicked", () => {
+      track("marketplace", "relay.new.marketplaceButtonClicked")
     }),
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.profileButtonClicked", () => {
-      track("profile", "kilo-code.new.profileButtonClicked")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.profileButtonClicked", () => {
+      track("profile", "relay.new.profileButtonClicked")
     }),
-    vscode.commands.registerCommand("kilo-code.new.sidebarTitle.settingsButtonClicked", () => {
-      track("settings", "kilo-code.new.settingsButtonClicked")
+    vscode.commands.registerCommand("relay.new.sidebarTitle.settingsButtonClicked", () => {
+      track("settings", "relay.new.settingsButtonClicked")
     }),
-    vscode.commands.registerCommand("kilo-code.new.plusButtonClicked", () => {
+    vscode.commands.registerCommand("relay.new.plusButtonClicked", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "plusButtonClicked" })
       else provider.postMessage({ type: "action", action: "plusButtonClicked" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManagerOpen", () => {
+    vscode.commands.registerCommand("relay.new.agentManagerOpen", () => {
       agentManagerProvider.openPanel()
     }),
-    vscode.commands.registerCommand("kilo-code.new.marketplaceButtonClicked", (directory?: string | null) => {
+    vscode.commands.registerCommand("relay.new.marketplaceButtonClicked", (directory?: string | null) => {
       marketplacePanelProvider.openPanel(directory)
     }),
-    vscode.commands.registerCommand("kilo-code.new.kiloClawOpen", () => {
+    vscode.commands.registerCommand("relay.new.kiloClawOpen", () => {
       kiloClawProvider.openPanel()
     }),
-    vscode.commands.registerCommand("kilo-code.new.historyButtonClicked", () => {
+    vscode.commands.registerCommand("relay.new.historyButtonClicked", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "historyButtonClicked" })
       else provider.postMessage({ type: "action", action: "historyButtonClicked" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.cycleAgentMode", () => {
+    vscode.commands.registerCommand("relay.new.cycleAgentMode", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "cycleAgentMode" })
       else provider.postMessage({ type: "action", action: "cycleAgentMode" })
       agentManagerProvider.postMessage({ type: "action", action: "cycleAgentMode" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.cyclePreviousAgentMode", () => {
+    vscode.commands.registerCommand("relay.new.cyclePreviousAgentMode", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "cyclePreviousAgentMode" })
       else provider.postMessage({ type: "action", action: "cyclePreviousAgentMode" })
       agentManagerProvider.postMessage({ type: "action", action: "cyclePreviousAgentMode" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.profileButtonClicked", () => {
+    vscode.commands.registerCommand("relay.new.profileButtonClicked", () => {
       settingsEditorProvider.openPanel("profile")
     }),
-    vscode.commands.registerCommand("kilo-code.new.settingsButtonClicked", (tab?: string) => {
+    vscode.commands.registerCommand("relay.new.settingsButtonClicked", (tab?: string) => {
       settingsEditorProvider.openPanel("settings", tab)
     }),
-    vscode.commands.registerCommand("kilo-code.new.openIndexingSettings", () => {
+    vscode.commands.registerCommand("relay.new.openIndexingSettings", () => {
       settingsEditorProvider.openPanel("settings", "indexing")
     }),
     // legacy-migration start
-    vscode.commands.registerCommand("kilo-code.new.openMigrationWizard", () => {
+    vscode.commands.registerCommand("relay.new.openMigrationWizard", () => {
       provider.postMessage({ type: "migrationState", needed: true, source: "legacy" })
     }),
     // legacy-migration end
-    vscode.commands.registerCommand("kilo-code.new.generateTerminalCommand", async () => {
+    vscode.commands.registerCommand("relay.new.generateTerminalCommand", async () => {
       const input = await vscode.window.showInputBox({
         prompt: "Describe the terminal command you want to generate",
         placeHolder: "e.g., find all .ts files modified in the last 24 hours",
       })
       if (!input) return
-      await vscode.commands.executeCommand("kilo-code.SidebarProvider.focus")
+      await vscode.commands.executeCommand("relay.SidebarProvider.focus")
       await provider.waitForReady()
       provider.postMessage({ type: "triggerTask", text: `Generate a terminal command: ${input}` })
     }),
-    vscode.commands.registerCommand("kilo-code.new.toggleRemote", () => {
+    vscode.commands.registerCommand("relay.new.toggleRemote", () => {
       remoteService.toggle().catch((err) => console.error("[Kilo New] toggleRemote command failed:", err))
     }),
-    vscode.commands.registerCommand("kilo-code.new.openInTab", () => {
+    vscode.commands.registerCommand("relay.new.openInTab", () => {
       return openKiloInNewTab(
         context,
         connectionService,
@@ -418,70 +418,70 @@ export function activate(context: vscode.ExtensionContext) {
       )
     }),
     vscode.commands.registerCommand(
-      "kilo-code.new.showChanges",
+      "relay.new.showChanges",
       (arg?: { sessionId?: string; turnId?: string; initialSourceId?: string }) => {
         diffViewerProvider.openFromCommand(arg)
       },
     ),
-    vscode.commands.registerCommand("kilo-code.new.openSubAgentViewer", (sessionID: string, title?: string) => {
+    vscode.commands.registerCommand("relay.new.openSubAgentViewer", (sessionID: string, title?: string) => {
       subAgentViewerProvider.openPanel(sessionID, title)
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.previousSession", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.previousSession", () => {
       agentManagerProvider.postMessage({ type: "action", action: "sessionPrevious" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.nextSession", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.nextSession", () => {
       agentManagerProvider.postMessage({ type: "action", action: "sessionNext" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.previousTab", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.previousTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "tabPrevious" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.nextTab", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.nextTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "tabNext" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.search", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.search", () => {
       agentManagerProvider.postMessage({ type: "action", action: "search" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.showTerminal", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.showTerminal", () => {
       // Route through the webview so it can reach into the active session
       // state and open the VS Code integrated terminal for it.
       agentManagerProvider.postMessage({ type: "action", action: "showTerminal" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.runScript", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.runScript", () => {
       agentManagerProvider.postMessage({ type: "action", action: "runScript" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.toggleDiff", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.toggleDiff", () => {
       agentManagerProvider.postMessage({ type: "action", action: "toggleDiff" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.showShortcuts", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.showShortcuts", () => {
       agentManagerProvider.postMessage({ type: "action", action: "showShortcuts" })
     }),
 
-    vscode.commands.registerCommand("kilo-code.new.agentManager.newTab", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.newTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "newTab" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.newTerminal", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.newTerminal", () => {
       agentManagerProvider.postMessage({ type: "action", action: "newTerminal" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.closeTab", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.closeTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "closeTab" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.newWorktree", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.newWorktree", () => {
       agentManagerProvider.postMessage({ type: "action", action: "newWorktree" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.openWorktree", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.openWorktree", () => {
       agentManagerProvider.postMessage({ type: "action", action: "openWorktree" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.openPR", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.openPR", () => {
       agentManagerProvider.postMessage({ type: "action", action: "openPR" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.closeWorktree", () => {
+    vscode.commands.registerCommand("relay.new.agentManager.closeWorktree", () => {
       agentManagerProvider.postMessage({ type: "action", action: "closeWorktree" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.advancedWorktree", () =>
+    vscode.commands.registerCommand("relay.new.agentManager.advancedWorktree", () =>
       agentManagerProvider.openAdvancedWorktree(),
     ),
     ...Array.from({ length: 9 }, (_, i) =>
-      vscode.commands.registerCommand(`kilo-code.new.agentManager.jumpTo${i + 1}`, () => {
+      vscode.commands.registerCommand(`relay.new.agentManager.jumpTo${i + 1}`, () => {
         agentManagerProvider.postMessage({ type: "action", action: `jumpTo${i + 1}` })
       }),
     ),
@@ -570,7 +570,7 @@ async function openKiloInNewTab(
 
   const targetCol = hasVisibleEditors ? Math.max(lastCol + 1, 1) : vscode.ViewColumn.Two
 
-  const panel = vscode.window.createWebviewPanel("kilo-code.new.TabPanel", EXTENSION_DISPLAY_NAME, targetCol, {
+  const panel = vscode.window.createWebviewPanel("relay.new.TabPanel", EXTENSION_DISPLAY_NAME, targetCol, {
     enableScripts: true,
     retainContextWhenHidden: true,
     localResourceRoots: [context.extensionUri],

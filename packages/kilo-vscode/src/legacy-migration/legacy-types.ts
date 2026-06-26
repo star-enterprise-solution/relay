@@ -224,7 +224,7 @@ export interface LegacyAutocompleteSettings {
 }
 
 // ---------------------------------------------------------------------------
-// Settings (stored in VS Code globalState under "kilo-code.*" keys)
+// Settings (stored in VS Code globalState under "relay.*" keys)
 // ---------------------------------------------------------------------------
 
 export interface LegacySettings {

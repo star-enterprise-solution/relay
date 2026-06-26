@@ -18,7 +18,7 @@ import {
   getAutocompleteModelById,
 } from "../../shared/autocomplete-models"
 
-const CONFIG_SECTION = "kilo-code.new.autocomplete"
+const CONFIG_SECTION = "relay.new.autocomplete"
 
 export function selector(kind: "classic" | "next-edit"): vscode.DocumentSelector {
   return kind === "classic" ? [{ scheme: "file" }, { scheme: "vscode-notebook-cell" }] : [{ scheme: "file" }]
@@ -457,7 +457,7 @@ export class AutocompleteServiceManager {
     if (response === disableCopilot) {
       await vscode.commands.executeCommand("github.copilot.completions.disable")
     } else if (response === disableInlineAssist) {
-      await vscode.commands.executeCommand("kilo-code.new.autocomplete.disable")
+      await vscode.commands.executeCommand("relay.new.autocomplete.disable")
     }
   }
 

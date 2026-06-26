@@ -70,7 +70,7 @@ describe("Extension — package.json command sync", () => {
     // Commands generated via template literals can't be extracted by regex,
     // so verify the dynamic registration pattern exists in source instead.
     const dynamic: Record<string, string> = {
-      "kilo-code.new.agentManager.jumpTo": "registerCommand(`kilo-code.new.agentManager.jumpTo${",
+      "relay.new.agentManager.jumpTo": "registerCommand(`relay.new.agentManager.jumpTo${",
     }
 
     const missing: string[] = []
@@ -93,37 +93,37 @@ describe("Extension — package.json command sync", () => {
   })
 
   /**
-   * All declared commands must use the kilo-code.new. prefix.
-   * The legacy kilo-code.* namespace (without .new.) belongs to the old
+   * All declared commands must use the relay.new. prefix.
+   * The legacy relay.* namespace (without .new.) belongs to the old
    * extension and must not be reintroduced.
    */
-  it("all declared commands use the kilo-code.new. prefix", () => {
-    const bad = declared.filter((cmd) => !cmd.startsWith("kilo-code.new."))
+  it("all declared commands use the relay.new. prefix", () => {
+    const bad = declared.filter((cmd) => !cmd.startsWith("relay.new."))
     expect(
       bad,
-      `Commands without "kilo-code.new." prefix — use the namespaced form:\n` + bad.map((b) => `  - ${b}`).join("\n"),
+      `Commands without "relay.new." prefix — use the namespaced form:\n` + bad.map((b) => `  - ${b}`).join("\n"),
     ).toEqual([])
   })
 
   it("scopes Agent Manager search to the panel and leaves the integrated terminal alone", () => {
     const binding = pkg.contributes?.keybindings?.find(
-      (item: { command: string }) => item.command === "kilo-code.new.agentManager.search",
+      (item: { command: string }) => item.command === "relay.new.agentManager.search",
     )
     expect(binding).toMatchObject({
       key: "ctrl+f",
       mac: "cmd+f",
-      when: "activeWebviewPanelId == 'kilo-code.new.AgentManagerPanel' && !terminalFocus",
+      when: "activeWebviewPanelId == 'relay.new.AgentManagerPanel' && !terminalFocus",
     })
   })
 
   it("scopes the open PR shortcut to Agent Manager", () => {
     const binding = pkg.contributes?.keybindings?.find(
-      (item: { command: string }) => item.command === "kilo-code.new.agentManager.openPR",
+      (item: { command: string }) => item.command === "relay.new.agentManager.openPR",
     )
     expect(binding).toMatchObject({
       key: "ctrl+shift+r",
       mac: "cmd+shift+r",
-      when: "activeWebviewPanelId == 'kilo-code.new.AgentManagerPanel'",
+      when: "activeWebviewPanelId == 'relay.new.AgentManagerPanel'",
     })
   })
 })
@@ -191,7 +191,7 @@ describe("Extension — KiloProvider handler wiring", () => {
   })
 
   it("TabPanel deserializer wires setContinueInWorktreeHandler before resolveWebviewPanel", () => {
-    const serializer = ext.indexOf('"kilo-code.new.TabPanel"')
+    const serializer = ext.indexOf('"relay.new.TabPanel"')
     expect(serializer, "TabPanel serializer must exist").toBeGreaterThan(-1)
     const body = sliceBlock(ext, serializer)
     const handler = body.indexOf("setContinueInWorktreeHandler")

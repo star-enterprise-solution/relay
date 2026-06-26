@@ -15,6 +15,6 @@ export type Features = {
 export function configFeatures(config?: ConfigLike | null): Features {
   return {
     indexing: hasIndexingPlugin(config?.plugin ?? []),
-    sandboxControls: vscode.workspace.getConfiguration("kilo-code.new.internal").get("sandboxControls", false),
+    sandboxControls: vscode.workspace.getConfiguration("relay.new.internal").get("sandboxControls", false),
   }
 }
