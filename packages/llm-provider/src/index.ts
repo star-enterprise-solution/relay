@@ -81,7 +81,7 @@ export {
 // ============================================================================
 // Note: TUI exports moved to separate entry point
 // ============================================================================
-// For TUI components and commands, import from "@kilocode/kilo-gateway/tui"
+// For TUI components and commands, import from "@relay/llm-provider/tui"
 // This avoids circular dependencies with opencode TUI infrastructure
 
 // ============================================================================

@@ -7,7 +7,7 @@ function model(id: string, training?: boolean): Provider.Model {
   return {
     id: ModelID.make(id),
     providerID: ProviderID.kilo,
-    api: { id: "kilo", url: "https://api.kilo.ai", npm: "@kilocode/kilo-gateway" },
+    api: { id: "kilo", url: "https://api.kilo.ai", npm: "@relay/llm-provider" },
     name: id,
     capabilities: {
       temperature: true,

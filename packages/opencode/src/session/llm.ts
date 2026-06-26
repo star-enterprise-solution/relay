@@ -248,7 +248,7 @@ const live: Layer.Layer<
 
       const instance = yield* InstanceState.context
       // kilocode_change start - capture eligible session export request start
-      const isKilo = input.model.api.npm === "@kilocode/kilo-gateway"
+      const isKilo = input.model.api.npm === "@relay/llm-provider"
       const org = yield* isKilo && input.model.isFree === true
         ? Effect.promise(() => getActiveOrg())
         : Effect.succeed({ type: "unknown" as const })

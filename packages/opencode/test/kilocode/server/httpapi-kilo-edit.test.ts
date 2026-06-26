@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, spyOn, test } from "bun:test"
 import { ConfigProvider, Layer } from "effect"
 import { HttpRouter } from "effect/unstable/http"
-import { HEADER_FEATURE, HEADER_ORGANIZATIONID } from "@kilocode/kilo-gateway"
+import { HEADER_FEATURE, HEADER_ORGANIZATIONID } from "@relay/llm-provider"
 import * as Log from "@opencode-ai/core/util/log"
 import { KiloGatewayPaths } from "../../../src/kilocode/server/httpapi/groups/kilo-gateway"
 import * as HttpApiServer from "../../../src/server/routes/instance/httpapi/server"

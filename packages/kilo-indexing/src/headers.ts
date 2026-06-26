@@ -1,4 +1,4 @@
-import { getDefaultHeaders } from "@kilocode/kilo-gateway"
+import { getDefaultHeaders } from "@relay/llm-provider"
 
 /**
  * Default headers for KiloCode requests

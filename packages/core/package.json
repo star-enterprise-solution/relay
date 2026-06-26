@@ -26,7 +26,7 @@
     "@types/semver": "catalog:"
   },
   "dependencies": {
-    "@kilocode/kilo-gateway": "workspace:*",
+    "@relay/llm-provider": "workspace:*",
     "@kilocode/sandbox": "workspace:*",
     "@effect/opentelemetry": "catalog:",
     "@effect/platform-node": "catalog:",

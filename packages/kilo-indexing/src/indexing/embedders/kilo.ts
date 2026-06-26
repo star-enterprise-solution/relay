@@ -1,5 +1,5 @@
-import { resolveKiloGatewayBaseUrl } from "@kilocode/kilo-gateway"
-import { HEADER_FEATURE, HEADER_ORGANIZATIONID } from "@kilocode/kilo-gateway"
+import { resolveKiloGatewayBaseUrl } from "@relay/llm-provider"
+import { HEADER_FEATURE, HEADER_ORGANIZATIONID } from "@relay/llm-provider"
 import { MAX_ITEM_TOKENS } from "../constants"
 import type { EmbedderInfo, EmbeddingResponse, IEmbedder } from "../interfaces/embedder"
 import { Log } from "../../util/log"

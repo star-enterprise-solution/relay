@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "posthog-node": "4.4.0",
-    "@kilocode/kilo-gateway": "workspace:*"
+    "@relay/llm-provider": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/bun": "catalog:",
