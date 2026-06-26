@@ -6,7 +6,14 @@ export interface DrizzleDb {
   insert(table: object): { values(data: object): { onConflictDoNothing(): { run(): void } } }
 }
 
-const INGEST_BASE = process.env.KILO_SESSION_INGEST_URL ?? "https://ingest.kilosessions.ai"
+// The cloud sessions ingest endpoint used to default to
+// https://ingest.kilosessions.ai. The fetch* helpers in this file are
+// called only from the kilo HTTP API group in opencode, which we
+// stubbed to HTTP 401 in Paso 1.2 — they never actually run. Default
+// pinned to empty string so the literal can't end up in the runtime
+// bundle. If anyone explicitly sets KILO_SESSION_INGEST_URL they take
+// responsibility for the destination.
+const INGEST_BASE = process.env.KILO_SESSION_INGEST_URL ?? ""
 const TIMEOUT = 30_000
 
 function exportUrl(sessionId: string) {

@@ -1,7 +1,13 @@
 import { parse as parseYaml } from "yaml"
 import type { MarketplaceItem, McpMarketplaceItem, AgentMarketplaceItem, SkillMarketplaceItem, RawSkill } from "./types"
 
-const BASE_URL = "https://api.kilo.ai/api/marketplace"
+// Used to point at https://api.kilo.ai/api/marketplace — Kilo's hosted
+// catalog of MCP plugins / agents / skills. Relay doesn't ship a
+// marketplace in MVP. Default is empty: every fetch in this module
+// short-circuits to an empty list, leaving the in-extension marketplace
+// view blank but not phoning home. When we ship our own catalog, point
+// this at the new origin (or make it configurable via setting).
+const BASE_URL = ""
 const CACHE_TTL = 300_000
 const MAX_RETRIES = 3
 const TIMEOUT = 10_000
@@ -79,6 +85,7 @@ export class MarketplaceApiClient {
   private async fetchMcps(): Promise<McpMarketplaceItem[]> {
     const cached = this.getCached("mcps")
     if (cached) return cached as McpMarketplaceItem[]
+    if (!BASE_URL) return this.cacheEmpty("mcps")
 
     const text = await fetchWithRetry(`${BASE_URL}/mcps`)
     const parsed = parseResponse(text) as { items?: unknown[] }
@@ -91,6 +98,7 @@ export class MarketplaceApiClient {
   private async fetchAgents(): Promise<AgentMarketplaceItem[]> {
     const cached = this.getCached("agents")
     if (cached) return cached as AgentMarketplaceItem[]
+    if (!BASE_URL) return this.cacheEmpty("agents")
 
     const text = await fetchWithRetry(`${BASE_URL}/agents`)
     const parsed = parseResponse(text) as { items?: unknown[] }
@@ -103,6 +111,7 @@ export class MarketplaceApiClient {
   private async fetchSkills(): Promise<SkillMarketplaceItem[]> {
     const cached = this.getCached("skills")
     if (cached) return cached as SkillMarketplaceItem[]
+    if (!BASE_URL) return this.cacheEmpty("skills")
 
     const text = await fetchWithRetry(`${BASE_URL}/skills`)
     const parsed = parseResponse(text) as { items?: unknown[] }
@@ -110,6 +119,15 @@ export class MarketplaceApiClient {
     const result = items.map(transformSkill)
     this.setCache("skills", result)
     return result
+  }
+
+  // Cache an empty list so the no-marketplace state doesn't trigger
+  // a "fetch failed" toast in the UI on every refresh. The marketplace
+  // view will simply show nothing — which is correct: there's no
+  // Relay-hosted catalog yet.
+  private cacheEmpty<T>(key: string): T[] {
+    this.setCache(key, [])
+    return [] as T[]
   }
 
   async fetchAll(): Promise<{ items: MarketplaceItem[]; errors: string[] }> {

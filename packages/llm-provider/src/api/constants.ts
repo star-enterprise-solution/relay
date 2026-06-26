@@ -24,22 +24,19 @@ export const DEFAULT_KILO_API_URL = "http://localhost:4000"
 export const KILO_API_BASE =
   process.env[ENV_KILO_API_URL] || process.env.KILO_API_URL || DEFAULT_KILO_API_URL
 
-/** Environment variable for custom Kilo Chat URL */
+// Kilo Chat / Event Service used to point at chat.kiloapps.io and
+// wss://events.kiloapps.io. Relay doesn't ship these features (they
+// were part of Kilo's commercial bundle, killed in Paso 0). The env
+// vars are kept so any user configuration that sets them still parses,
+// but the defaults are empty — the constants are exported only because
+// a few files in the legacy code path still import them; they reach
+// the bundle as empty strings and produce no network traffic.
 export const KILO_CHAT_URL_ENV = "KILO_CHAT_URL"
-
-/** Default Kilo Chat URL (REST endpoint for messages, conversations, etc.) */
-export const KILO_DEFAULT_CHAT_URL = "https://chat.kiloapps.io"
-
-/** Base URL for Kilo Chat - can be overridden by KILO_CHAT_URL env var */
+export const KILO_DEFAULT_CHAT_URL = ""
 export const KILO_CHAT_URL = process.env[KILO_CHAT_URL_ENV] || KILO_DEFAULT_CHAT_URL
 
-/** Environment variable for custom Event Service URL */
 export const KILO_EVENT_SERVICE_URL_ENV = "EVENT_SERVICE_URL"
-
-/** Default Event Service URL (WebSocket endpoint for kilo-chat events) */
-export const KILO_DEFAULT_EVENT_SERVICE_URL = "wss://events.kiloapps.io"
-
-/** Base URL for Event Service - can be overridden by EVENT_SERVICE_URL env var */
+export const KILO_DEFAULT_EVENT_SERVICE_URL = ""
 export const KILO_EVENT_SERVICE_URL = process.env[KILO_EVENT_SERVICE_URL_ENV] || KILO_DEFAULT_EVENT_SERVICE_URL
 
 /**
