@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway vous donne accès à une sélection de modèles fiables et optimisés pour les agents de codage.",
+    "Relay Gateway vous donne accès à une sélection de modèles fiables et optimisés pour les agents de codage.",
   "provider.connect.kiloGateway.line2":
     "Avec une seule clé API, vous aurez accès à des modèles tels que Claude, GPT, Gemini, GLM et plus encore.",
   "provider.connect.kiloGateway.visit.prefix": "Visitez ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " pour obtenir votre clé API.",
   "provider.connect.kiloGateway.byok.prefix": "Pour plus de statistiques d'utilisation, utilisez ",
-  "provider.connect.kiloGateway.byok.link": "BYOK via Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK via Relay Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Attendez la fin de l'instantané. Les tours suivants sont rapides une fois l'instantané initial créé.",
   "snapshot.slowRepo.answer.disable": "Désactiver pour ce projet",
   "snapshot.slowRepo.answer.disable.description":
-    "Désactivez les instantanés Kilo pour ce projet. Vous perdez l'annulation/restauration des modifications faites par Kilo, mais git continue de tout suivre.",
+    "Désactivez les instantanés Relay pour ce projet. Vous perdez l'annulation/restauration des modifications faites par Relay, mais git continue de tout suivre.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Ouvrir dans le visualiseur de différences",

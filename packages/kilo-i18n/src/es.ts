@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway te da acceso a un conjunto seleccionado de modelos optimizados y confiables para agentes de codificación.",
+    "Relay Gateway te da acceso a un conjunto seleccionado de modelos optimizados y confiables para agentes de codificación.",
   "provider.connect.kiloGateway.line2":
     "Con una sola clave API tendrás acceso a modelos como Claude, GPT, Gemini, GLM y más.",
   "provider.connect.kiloGateway.visit.prefix": "Visita ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " para obtener tu clave API.",
   "provider.connect.kiloGateway.byok.prefix": "Para más estadísticas de uso, utiliza ",
-  "provider.connect.kiloGateway.byok.link": "BYOK a través de Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK a través de Relay's Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Sigue esperando hasta que termine la instantánea. Los turnos siguientes serán rápidos una vez creada la instantánea inicial.",
   "snapshot.slowRepo.answer.disable": "Desactivar para este proyecto",
   "snapshot.slowRepo.answer.disable.description":
-    "Apaga las instantáneas de Kilo para este proyecto. Perderás deshacer/rehacer de los cambios de Kilo, pero git seguirá rastreando todo.",
+    "Apaga las instantáneas de Relay para este proyecto. Perderás deshacer/rehacer de los cambios de Relay, pero git seguirá rastreando todo.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Abrir en el visor de diferencias",

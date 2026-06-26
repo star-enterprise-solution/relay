@@ -1,13 +1,13 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gatewayは、コーディングエージェント向けに厳選された信頼性の高い最適化モデルへのアクセスを提供します。",
+    "Relay Gatewayは、コーディングエージェント向けに厳選された信頼性の高い最適化モデルへのアクセスを提供します。",
   "provider.connect.kiloGateway.line2": "1つのAPIキーで、Claude、GPT、Gemini、GLMなどのモデルにアクセスできます。",
   "provider.connect.kiloGateway.visit.prefix": "",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " にアクセスしてAPIキーを取得してください。",
   "provider.connect.kiloGateway.byok.prefix": "詳細な使用統計については、",
-  "provider.connect.kiloGateway.byok.link": "Kilo's Gateway経由でBYOK",
+  "provider.connect.kiloGateway.byok.link": "Relay's Gateway経由でBYOK",
   "provider.connect.kiloGateway.byok.suffix": "をご利用ください。",
 
   // Provider settings translations
@@ -100,7 +100,7 @@ export const dict = {
     "スナップショットが完了するまで待機します。初回のスナップショットが作成された後は、以降のターンは高速になります。",
   "snapshot.slowRepo.answer.disable": "このプロジェクトで無効化",
   "snapshot.slowRepo.answer.disable.description":
-    "このプロジェクトでは Kilo のスナップショットを無効にします。Kilo による変更の取り消し/やり直しはできなくなりますが、git は引き続きすべてを追跡します。",
+    "このプロジェクトでは Relay のスナップショットを無効にします。Relay による変更の取り消し/やり直しはできなくなりますが、git は引き続きすべてを追跡します。",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "差分ビューアーで開く",

@@ -1,152 +1,197 @@
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code"><img src="https://raster.shields.io/badge/VS_Code_Marketplace-007ACC?style=flat&logo=visualstudiocode&logoColor=white" alt="VS Code Marketplace" height="20"></a>
-  <a href="https://x.com/kilocode"><img src="https://raster.shields.io/badge/kilocode-000000?style=flat&logo=x&logoColor=white" alt="X (Twitter)" height="20"></a>
-  <a href="https://blog.kilo.ai"><img src="https://raster.shields.io/badge/Blog-555?style=flat&logo=substack&logoColor=white" alt="Substack Blog" height="20"></a>
-  <a href="https://kilo.ai/discord"><img src="https://raster.shields.io/badge/Join%20Discord-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" height="20"></a>
-  <a href="https://www.reddit.com/r/kilocode/"><img src="https://raster.shields.io/badge/Join%20r%2Fkilocode-D84315?style=flat&logo=reddit&logoColor=white" alt="Reddit" height="20"></a>
-</p>
+# Relay — Resilient AI Coding Agent
 
-<p align="center">
-  <a href="https://kilo.ai"><img width="250" alt="kilo-code-logo" src="https://github.com/user-attachments/assets/bdb0c174-b9fd-40ad-a47b-f3aab9b54e8d" /></a>
-</p>
+> AI coding agent for VS Code with **multi-provider resilience** and
+> **spec-driven development**. Bring your own API keys; never get blocked
+> by a single provider outage.
 
-<p align="center">
-  <strong>Kilo is the all-in-one agentic engineering platform.</strong><br>
-  Build, ship, and iterate faster with the most popular open source coding agent.
-</p>
+---
 
-<p align="center">
-  <img width="100%" alt="Kilo Code running inside VS Code" src="https://kilo.ai/_next/image?url=%2Fscreenshots%2Fvs-code%2Fvs-code-home-page-screenshot.png&w=3840&q=75">
-</p>
+## Why Relay
 
-<p align="center">
-  <a href="https://kilo.ai">Website</a> ·
-  <a href="https://kilo.ai/install">Install</a> ·
-  <a href="https://kilo.ai/landing/vs-code">IDE</a> ·
-  <a href="https://kilo.ai/cli">CLI</a> ·
-  <a href="https://kilo.ai/docs">Docs</a> ·
-  <a href="https://kilo.ai/leaderboard">Models</a> ·
-  <a href="https://kilo.ai/gateway">Gateway</a> ·
-  <a href="https://kilo.ai/pricing">Pricing</a> ·
-  <a href="https://kilo.ai/pricing/kilo-pass">Kilo Pass</a>
-</p>
+| Pain point | What Relay does |
+|---|---|
+| Claude hits 429 in the middle of your refactor | Automatic fallback to Gemini → Kimi. Your IDE never stops. |
+| "Vague feature → bad code" loop | Spec mode generates `requirements.md` → `design.md` → `tasks.md` you can review and version. |
+| Vendor lock-in to one model's billing | BYOK — your Anthropic / Gemini / Moonshot keys, your bill. We charge for the platform, never for tokens. |
+| Corporate firewall blocks N AI hostnames | Single endpoint via the Relay gateway. Open one domain, get all providers. |
+| Prompts leaving your VPC | Self-host the gateway in your cluster with our Helm chart. |
 
-<p align="center">
-  500+ models. One open source agent in <a href="https://kilo.ai/install">VS Code</a>, <a href="https://kilo.ai/features/jetbrains-native">JetBrains</a>, <a href="https://kilo.ai/cli">CLI</a>, <a href="https://kilo.ai/slack">Slack</a>, and <a href="https://kilo.ai/cloud">Cloud</a>.
-</p>
+---
 
-> 🚀 **Coming from Roo Code?** Switch to Kilo and check out our [migration guide](https://kilo.ai/articles/roo-to-kilo-migration-guide)!
+## Quick start
 
-## Key Features
+### 1. Install
 
-- **Code Generation:** Kilo can generate code using natural language.
-- **Inline Autocomplete:** Get intelligent code completions as you type, powered by AI.
-- **Task Automation:** Kilo can automate repetitive coding tasks to save time..
-- **Automated Refactoring:** Kilo can refactor and improve existing code efficiently.
-- **MCP Server Marketplace**: Kilo can easily find, and use MCP servers to extend the agent capabilities.
-- **Multi Mode**: Plan with Architect, Code with Coder, and Debug with Debugger, and make your own custom modes.
-
-## Get Started
-
-1. Install the Kilo Code extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code).
-2. Create your account to access 500+ cutting-edge AI models including GPT-5.5, Claude Opus 4.7, Claude Sonnet 4.6, and Gemini 3.1 Pro Preview, with transparent pricing that matches provider rates exactly.
-3. Start coding with AI that adapts to your workflow. Watch our quick-start guide to see Kilo in action:
-
-<a href="https://youtu.be/pqGfYXgrhig"><img src="https://img.youtube.com/vi/pqGfYXgrhig/maxresdefault.jpg" alt="Watch the video" width="640" height="360"></a>
-
-## Developer Setup
-
-If you want to contribute or modify the extension locally, see the [DEVELOPMENT.md](/DEVELOPMENT.md) file for build and setup instructions.
-
-### Snapshot Builds
-
-To build and share a development snapshot of the extension:
-
+From VS Code: **Extensions** → search `Relay` → **Install**.
+Or from CLI:
 ```bash
-# Run from packages/kilo-vscode/
-
-# Build only (outputs VSIX to system temp dir)
-bun run snapshot:build
-
-# Build and install directly into VS Code
-bun run snapshot:install
+code --install-extension star-enterprise-solution.relay
 ```
 
-The snapshot version embeds the current commit SHA and your git username (from `git config user.name`), e.g. `7.0.47-snapshot+8ff7f2d02.kirillk`.
+### 2. Bring your keys
 
-## Contributing
+Open VS Code settings (⌘, on macOS) and search for `Relay`. Paste:
 
-We welcome contributions from developers, writers, and enthusiasts!
-To get started, please read our [Contributing Guide](/CONTRIBUTING.md). It includes details on setting up your environment, coding standards, types of contribution and how to submit pull requests.
+- **Anthropic API Key** (required — primary provider)
+- **Gemini API Key** (optional — second in fallback chain)
+- **Moonshot API Key** (optional — third)
 
-## Code of Conduct
+Get keys at:
+- Anthropic: <https://console.anthropic.com/settings/keys>
+- Gemini: <https://aistudio.google.com/app/apikey>
+- Moonshot: <https://platform.moonshot.cn/console/api-keys>
 
-Our community is built on respect, inclusivity, and collaboration. Please review our [Code of Conduct](/CODE_OF_CONDUCT.md) to understand the expectations for all contributors and community members.
+You only need Anthropic to start. The other two enable the fallback chain.
+
+### 3. Pick how Relay routes your requests
+
+There are three ways:
+
+#### a) Relay Cloud (default — easiest)
+The extension is pre-configured to point at our hosted gateway.
+Requires a Relay account — sign up at <https://relay.dev>.
+
+#### b) Self-hosted gateway (enterprise)
+Set `Relay › Gateway Url` in settings to your cluster's gateway URL.
+See the enterprise install guide:
+<https://github.com/star-enterprise-solution/relay-workspace/blob/main/docs/enterprise/INSTALL.md>
+
+#### c) Local gateway (for developers)
+```bash
+git clone https://github.com/star-enterprise-solution/relay-workspace
+cd relay-workspace/gateway
+cp .env.example .env  # paste your API keys
+docker compose up -d
+```
+Then set `Relay › Gateway Url` to `http://localhost:4000`.
+
+### 4. First request
+
+Open the Relay sidebar (left activity bar, ⚡ icon). Type:
+
+```
+Generate a TypeScript utility that retries an async function with
+exponential backoff. Include tests.
+```
+
+You should see streaming output. If a provider rate-limits, the agent
+fails over to the next without you noticing.
+
+---
+
+## Spec-driven development
+
+Relay's signature feature. Instead of asking the agent to "build a
+feature" in one shot, you walk through three reviewable artifacts:
+
+1. **Requirements** — User stories, acceptance criteria, in/out of scope.
+2. **Design** — Architecture, data model, API contracts.
+3. **Tasks** — Concrete to-do list the agent picks up and executes.
+
+Trigger with the **Spec** agent mode in the sidebar, or the command palette: `Relay: New Spec`.
+
+Each artifact lands as a Markdown file in `docs/specs/<feature>/`. You
+review and edit before moving to the next stage. The agent honors the
+files as constraints when it implements.
+
+The flow forces you to think before generating, and gives you reviewable
+diffs at each step.
+
+---
+
+## Multi-provider resilience
+
+By default, Relay tries providers in this order:
+
+```
+Anthropic Claude → Google Gemini → Moonshot Kimi
+```
+
+Each provider has retry, cooldown, and failure-budget settings configured
+at the gateway. If `anthropic.com` returns a 429 or 5xx, the request
+re-routes to the next provider — same prompt, same response format —
+without your IDE knowing.
+
+You can change the order or add providers in the gateway's `config.yaml`.
+See `docs/specs/multi-provider-resilience.md` in the workspace repo for
+the design.
+
+---
+
+## Settings reference
+
+| Setting | Default | Description |
+|---|---|---|
+| `Relay › Gateway Url` | `https://api.relay.dev` | Where the extension sends inference requests |
+| `Relay › Virtual Key` | _empty_ | Auth token for Relay Cloud (issued by the dashboard) |
+| `Relay › Anthropic Api Key` | _empty_ | Your Anthropic key, BYOK |
+| `Relay › Gemini Api Key` | _empty_ | Your Gemini key, BYOK |
+| `Relay › Moonshot Api Key` | _empty_ | Your Moonshot key, BYOK |
+| `Relay › Primary Model` | `primary` | Which model_name in gateway config to start with |
+
+For corporate proxy + custom CA bundle setups, use standard
+`HTTP_PROXY` / `HTTPS_PROXY` env vars and `NODE_EXTRA_CA_CERTS`. Relay
+respects them.
+
+---
+
+## Troubleshooting
+
+### "Cannot reach gateway"
+```bash
+curl https://api.relay.dev/health
+```
+If that fails, your network blocks it (check your corporate proxy).
+If it works, re-check `Relay › Gateway Url` — typo most likely.
+
+### "401 Unauthorized" on every request
+Either your Relay virtual key is invalid/revoked, or you forgot to paste
+your provider API key. The latter is more common — check
+`Relay › Anthropic Api Key` is set.
+
+### Rate limit errors despite the fallback chain
+The chain only kicks in on 429 / 5xx. A 403 ("invalid key") doesn't
+trigger fallback — fix the key. Same for 404 ("model not available") —
+that means you asked for a model the gateway doesn't have configured.
+
+### Extension activated but sidebar is empty
+Reload the window (`⌘⇧P` → `Developer: Reload Window`). If still empty,
+check the output panel (`⌘⇧U` → select **Relay** from the dropdown).
+
+### File bugs
+<https://github.com/star-enterprise-solution/relay/issues>
+
+---
+
+## What Relay does NOT do
+
+We're upfront about scope:
+
+- **Resell model inference.** You pay providers directly with your own keys.
+- **Store prompts or responses.** The hosted gateway logs only metadata
+  (timestamps, models, token counts). See
+  [PRIVACY.md](https://github.com/star-enterprise-solution/relay-workspace/blob/main/docs/legal/PRIVACY.md).
+- **Provide inline ghost-text autocomplete.** We focus on agent / chat
+  workflows. Use Copilot or Cursor's autocomplete alongside Relay if you
+  want that.
+
+---
 
 ## License
 
-This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
-You’re free to use, modify, and distribute this code, including for commercial purposes as long as you include proper attribution and license notices. See [License](/LICENSE).
+MIT. Substantial modifications from upstream
+[Kilo Code](https://github.com/Kilo-Org/kilocode); see
+[NOTICE.md](https://github.com/star-enterprise-solution/relay-workspace/blob/main/docs/legal/NOTICE.md)
+for full attribution.
 
-## Contributing
+---
 
-Contributions are welcome, and they are greatly appreciated! Get started by reading our [Contributing Guide](CONTRIBUTING.md). Or join our [Discord](https://kilo.ai/discord) to chat with the team and community.
+## Links
 
-Thanks to all the contributors who help make Kilo better!
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/mcowger">
-        <img src="https://avatars.githubusercontent.com/u/1929548?size=100" width="100" height="100" alt="mcowger" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/bhaktatejas922">
-        <img src="https://avatars.githubusercontent.com/u/26863466?size=100" width="100" height="100" alt="bhaktatejas922" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/NyxJae">
-        <img src="https://avatars.githubusercontent.com/u/52313587?size=100" width="100" height="100" alt="NyxJae" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Aikiboy123">
-        <img src="https://avatars.githubusercontent.com/u/161741275?size=100" width="100" height="100" alt="Aikiboy123" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/cobra91">
-        <img src="https://avatars.githubusercontent.com/u/1060585?size=100" width="100" height="100" alt="cobra91" style="border-radius: 50%;" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/ivanarifin">
-        <img src="https://avatars.githubusercontent.com/u/111653938?size=100" width="100" height="100" alt="ivanarifin" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/PeterDaveHello">
-        <img src="https://avatars.githubusercontent.com/u/3691490?size=100" width="100" height="100" alt="PeterDaveHello" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/possible055">
-        <img src="https://avatars.githubusercontent.com/u/38576169?size=100" width="100" height="100" alt="possible055" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/seuros">
-        <img src="https://avatars.githubusercontent.com/u/2394703?size=100" width="100" height="100" alt="seuros" style="border-radius: 50%;" />
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Kilo-Org/kilocode/graphs/contributors">
-        <b>more ...</b>
-      </a>
-    </td>
-  </tr>
-</table>
+- Website: <https://relay.dev>
+- Dashboard: <https://app.relay.dev>
+- Pricing: <https://relay.dev/pricing>
+- Enterprise docs: <https://github.com/star-enterprise-solution/relay-workspace/tree/main/docs/enterprise>
+- Source code: <https://github.com/star-enterprise-solution/relay>
+- Issues: <https://github.com/star-enterprise-solution/relay/issues>
+- Contact: hello@relay.dev

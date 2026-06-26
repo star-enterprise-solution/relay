@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway gir deg tilgang til et utvalgt sett med pålitelige, optimaliserte modeller for kodingsagenter.",
+    "Relay Gateway gir deg tilgang til et utvalgt sett med pålitelige, optimaliserte modeller for kodingsagenter.",
   "provider.connect.kiloGateway.line2":
     "Med én enkelt API-nøkkel får du tilgang til modeller som Claude, GPT, Gemini, GLM og flere.",
   "provider.connect.kiloGateway.visit.prefix": "Besøk ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " for å hente API-nøkkelen din.",
   "provider.connect.kiloGateway.byok.prefix": "For mer bruksstatistikk, bruk ",
-  "provider.connect.kiloGateway.byok.link": "BYOK via Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK via Relay Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Vent til snapshotet er ferdig. Påfølgende runder er raske når det første snapshotet er bygget.",
   "snapshot.slowRepo.answer.disable": "Deaktiver for dette prosjektet",
   "snapshot.slowRepo.answer.disable.description":
-    "Slå av Kilos snapshots for dette prosjektet. Du mister angre/gjør om for Kilo-endringer, men git fortsetter å spore alt.",
+    "Slå av Relays snapshots for dette prosjektet. Du mister angre/gjør om for Relay-endringer, men git fortsetter å spore alt.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Åpne i diff-visning",

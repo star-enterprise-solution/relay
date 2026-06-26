@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway ให้คุณเข้าถึงชุดโมเดลที่คัดสรรมาอย่างดีและเชื่อถือได้สำหรับตัวแทนเขียนโค้ด",
+    "Relay Gateway ให้คุณเข้าถึงชุดโมเดลที่คัดสรรมาอย่างดีและเชื่อถือได้สำหรับตัวแทนเขียนโค้ด",
   "provider.connect.kiloGateway.line2":
     "ด้วย API key เดียว คุณจะสามารถเข้าถึงโมเดลต่างๆ เช่น Claude, GPT, Gemini, GLM และอื่นๆ",
   "provider.connect.kiloGateway.visit.prefix": "เยี่ยมชม ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " เพื่อรับ API key ของคุณ",
   "provider.connect.kiloGateway.byok.prefix": "สำหรับสถิติการใช้งานเพิ่มเติม โปรดใช้ ",
-  "provider.connect.kiloGateway.byok.link": "BYOK ผ่าน Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK ผ่าน Relay's Gateway",
   "provider.connect.kiloGateway.byok.suffix": "",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "รอจนกว่าสแน็ปช็อตจะเสร็จ เทิร์นถัดไปจะเร็วขึ้นเมื่อสร้างสแน็ปช็อตแรกเสร็จแล้ว",
   "snapshot.slowRepo.answer.disable": "ปิดใช้งานสำหรับโปรเจกต์นี้",
   "snapshot.slowRepo.answer.disable.description":
-    "ปิดสแน็ปช็อตของ Kilo สำหรับโปรเจกต์นี้ คุณจะสูญเสียการยกเลิก/ทำซ้ำสำหรับการเปลี่ยนแปลงของ Kilo แต่ git ยังคงติดตามทุกอย่าง",
+    "ปิดสแน็ปช็อตของ Relay สำหรับโปรเจกต์นี้ คุณจะสูญเสียการยกเลิก/ทำซ้ำสำหรับการเปลี่ยนแปลงของ Relay แต่ git ยังคงติดตามทุกอย่าง",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "เปิดในตัวดูความแตกต่าง",

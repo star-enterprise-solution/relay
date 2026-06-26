@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway zapewnia dostęp do wyselekcjonowanego zestawu niezawodnych, zoptymalizowanych modeli dla agentów kodowania.",
+    "Relay Gateway zapewnia dostęp do wyselekcjonowanego zestawu niezawodnych, zoptymalizowanych modeli dla agentów kodowania.",
   "provider.connect.kiloGateway.line2":
     "Za pomocą jednego klucza API uzyskasz dostęp do modeli takich jak Claude, GPT, Gemini, GLM i innych.",
   "provider.connect.kiloGateway.visit.prefix": "Odwiedź ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": ", aby otrzymać swój klucz API.",
   "provider.connect.kiloGateway.byok.prefix": "Aby uzyskać więcej statystyk użycia, użyj ",
-  "provider.connect.kiloGateway.byok.link": "BYOK przez Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK przez Relay's Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Poczekaj, aż snapshot się zakończy. Kolejne tury są szybkie, gdy początkowy snapshot jest już zbudowany.",
   "snapshot.slowRepo.answer.disable": "Wyłącz dla tego projektu",
   "snapshot.slowRepo.answer.disable.description":
-    "Wyłącz snapshoty Kilo dla tego projektu. Stracisz cofanie/przywracanie zmian Kilo, ale git nadal śledzi wszystko.",
+    "Wyłącz snapshoty Relay dla tego projektu. Stracisz cofanie/przywracanie zmian Relay, ale git nadal śledzi wszystko.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Otwórz w podglądzie różnic",

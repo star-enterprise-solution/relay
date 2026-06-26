@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway omogućava pristup pažljivo odabranom skupu pouzdanih modela optimizovanih za rad sa agentima za kodiranje.",
+    "Relay Gateway omogućava pristup pažljivo odabranom skupu pouzdanih modela optimizovanih za rad sa agentima za kodiranje.",
   "provider.connect.kiloGateway.line2":
     "Sa jednim API ključem dobijate pristup modelima kao što su Claude, GPT, Gemini, GLM i drugi.",
   "provider.connect.kiloGateway.visit.prefix": "Posjetite ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " da preuzmete svoj API ključ.",
   "provider.connect.kiloGateway.byok.prefix": "Za više statistika korištenja, koristite ",
-  "provider.connect.kiloGateway.byok.link": "BYOK putem Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK putem Relay's Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -107,7 +107,7 @@ export const dict = {
     "Sačekaj da se snapshot završi. Naredni potezi su brzi kada se početni snapshot jednom napravi.",
   "snapshot.slowRepo.answer.disable": "Onemogući za ovaj projekat",
   "snapshot.slowRepo.answer.disable.description":
-    "Isključi Kilo snapshotove za ovaj projekat. Izgubićete poništi/vrati za izmjene koje napravi Kilo, ali git i dalje prati sve.",
+    "Isključi Relay snapshotove za ovaj projekat. Izgubićete poništi/vrati za izmjene koje napravi Relay, ali git i dalje prati sve.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Otvori u pregledniku razlika",

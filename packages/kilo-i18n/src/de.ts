@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway bietet Ihnen Zugang zu einer kuratierten Auswahl zuverlässiger, optimierter Modelle für Coding-Agenten.",
+    "Relay Gateway bietet Ihnen Zugang zu einer kuratierten Auswahl zuverlässiger, optimierter Modelle für Coding-Agenten.",
   "provider.connect.kiloGateway.line2":
     "Mit einem einzigen API-Schlüssel erhalten Sie Zugang zu Modellen wie Claude, GPT, Gemini, GLM und mehr.",
   "provider.connect.kiloGateway.visit.prefix": "Besuchen Sie ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": ", um Ihren API-Schlüssel zu erhalten.",
   "provider.connect.kiloGateway.byok.prefix": "Für weitere Nutzungsstatistiken ",
-  "provider.connect.kiloGateway.byok.link": "BYOK via Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK via Relay Gateway",
   "provider.connect.kiloGateway.byok.suffix": " nutzen.",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Auf den Abschluss des Snapshots warten. Nachfolgende Runden sind schnell, sobald der initiale Snapshot erstellt ist.",
   "snapshot.slowRepo.answer.disable": "Für dieses Projekt deaktivieren",
   "snapshot.slowRepo.answer.disable.description":
-    "Kilo-Snapshots für dieses Projekt ausschalten. Rückgängig/Wiederherstellen für Kilo-Änderungen ist nicht mehr möglich, aber git verfolgt weiterhin alles.",
+    "Relay-Snapshots für dieses Projekt ausschalten. Rückgängig/Wiederherstellen für Relay-Änderungen ist nicht mehr möglich, aber git verfolgt weiterhin alles.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Im Diff-Viewer öffnen",

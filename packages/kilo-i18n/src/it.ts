@@ -3,14 +3,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway ti offre una selezione curata di modelli affidabili e ottimizzati per agenti di coding.",
+    "Relay Gateway ti offre una selezione curata di modelli affidabili e ottimizzati per agenti di coding.",
   "provider.connect.kiloGateway.line2":
     "Con una sola API key puoi accedere a modelli come Claude, GPT, Gemini, GLM e altri.",
   "provider.connect.kiloGateway.visit.prefix": "Visita ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " per ottenere la tua API key.",
   "provider.connect.kiloGateway.byok.prefix": "Per ulteriori statistiche sull'utilizzo, utilizza ",
-  "provider.connect.kiloGateway.byok.link": "BYOK tramite Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK tramite Relay's Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Continua ad attendere il completamento dello snapshot. Le iterazioni successive saranno rapide dopo la creazione dello snapshot iniziale.",
   "snapshot.slowRepo.answer.disable": "Disabilita per questo progetto",
   "snapshot.slowRepo.answer.disable.description":
-    "Disattiva gli snapshot di Kilo per questo progetto. Perderai annulla/ripeti sulle modifiche ai file fatte da Kilo, ma git continuerà a tracciare tutto.",
+    "Disattiva gli snapshot di Relay per questo progetto. Perderai annulla/ripeti sulle modifiche ai file fatte da Relay, ma git continuerà a tracciare tutto.",
 
   "ui.messagePart.openInDiffViewer": "Apri nel visualizzatore diff",
   "ui.messagePart.shell.command": "Comando",

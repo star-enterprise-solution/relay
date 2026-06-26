@@ -3,14 +3,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway gives you access to a curated set of reliable optimized models for coding agents.",
+    "Relay Gateway gives you access to a curated set of reliable optimized models for coding agents.",
   "provider.connect.kiloGateway.line2":
     "With a single API key you'll get access to models such as Claude, GPT, Gemini, GLM and more.",
   "provider.connect.kiloGateway.visit.prefix": "Visit ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " to collect your API key.",
   "provider.connect.kiloGateway.byok.prefix": "For more usage stats, ",
-  "provider.connect.kiloGateway.byok.link": "BYOK via Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK via Relay Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -108,7 +108,7 @@ export const dict = {
     "Keep waiting for the snapshot to complete. Subsequent turns are fast once the initial snapshot is built.",
   "snapshot.slowRepo.answer.disable": "Disable for this project",
   "snapshot.slowRepo.answer.disable.description":
-    "Turn off Kilo's snapshots for this project. You will lose undo/redo of Kilo file changes, but git still tracks everything.",
+    "Turn off Relay's snapshots for this project. You will lose undo/redo of Relay file changes, but git still tracks everything.",
 
   // Edit-tool header: hover-revealed action opening the diff in a full tab.
   "ui.messagePart.openInDiffViewer": "Open in Diff Viewer",

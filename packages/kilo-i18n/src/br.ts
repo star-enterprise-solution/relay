@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "O Kilo Gateway oferece acesso a um conjunto selecionado de modelos confiáveis e otimizados para agentes de codificação.",
+    "O Relay Gateway oferece acesso a um conjunto selecionado de modelos confiáveis e otimizados para agentes de codificação.",
   "provider.connect.kiloGateway.line2":
     "Com uma única chave de API, você terá acesso a modelos como Claude, GPT, Gemini, GLM e mais.",
   "provider.connect.kiloGateway.visit.prefix": "Visite ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " para obter sua chave de API.",
   "provider.connect.kiloGateway.byok.prefix": "Para mais estatísticas de uso, utilize ",
-  "provider.connect.kiloGateway.byok.link": "BYOK via Kilo's Gateway",
+  "provider.connect.kiloGateway.byok.link": "BYOK via Relay Gateway",
   "provider.connect.kiloGateway.byok.suffix": ".",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Aguarde a conclusão do snapshot. Os próximos turnos serão rápidos depois que o snapshot inicial for criado.",
   "snapshot.slowRepo.answer.disable": "Desativar para este projeto",
   "snapshot.slowRepo.answer.disable.description":
-    "Desligue os snapshots do Kilo para este projeto. Você perde desfazer/refazer das mudanças feitas pelo Kilo, mas o git continua rastreando tudo.",
+    "Desligue os snapshots do Relay para este projeto. Você perde desfazer/refazer das mudanças feitas pelo Relay, mas o git continua rastreando tudo.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Abrir no Visualizador de Diferenças",

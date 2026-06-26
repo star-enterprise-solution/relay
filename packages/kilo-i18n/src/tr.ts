@@ -1,14 +1,14 @@
 export const dict = {
   // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway, kodlama ajanları için optimize edilmiş güvenilir modellere erişim sağlar.",
+    "Relay Gateway, kodlama ajanları için optimize edilmiş güvenilir modellere erişim sağlar.",
   "provider.connect.kiloGateway.line2":
     "Tek bir API anahtarıyla Claude, GPT, Gemini, GLM ve daha fazlası gibi modellere erişebilirsiniz.",
   "provider.connect.kiloGateway.visit.prefix": "API anahtarınızı almak için ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "relay.dev",
   "provider.connect.kiloGateway.visit.suffix": " adresini ziyaret edin.",
   "provider.connect.kiloGateway.byok.prefix": "Daha fazla kullanım istatistiği için ",
-  "provider.connect.kiloGateway.byok.link": "Kilo's Gateway üzerinden BYOK",
+  "provider.connect.kiloGateway.byok.link": "Relay's Gateway üzerinden BYOK",
   "provider.connect.kiloGateway.byok.suffix": " kullanın.",
 
   // Provider settings translations
@@ -102,7 +102,7 @@ export const dict = {
     "Anlık görüntü tamamlanana kadar bekleyin. İlk anlık görüntü oluşturulduktan sonra sonraki turlar hızlıdır.",
   "snapshot.slowRepo.answer.disable": "Bu proje için devre dışı bırak",
   "snapshot.slowRepo.answer.disable.description":
-    "Bu proje için Kilo anlık görüntülerini kapat. Kilo değişiklikleri için geri alma/yeniden yapmayı kaybedersiniz, ancak git her şeyi izlemeye devam eder.",
+    "Bu proje için Relay anlık görüntülerini kapat. Relay değişiklikleri için geri alma/yeniden yapmayı kaybedersiniz, ancak git her şeyi izlemeye devam eder.",
 
   // Edit-tool header and shell-tool section labels
   "ui.messagePart.openInDiffViewer": "Fark Görüntüleyicide Aç",
