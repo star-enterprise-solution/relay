@@ -51,13 +51,22 @@ jobs:
       - name: Typecheck
         run: bun turbo run typecheck --filter=relay
 
+      # Bundle the extension code with esbuild and prepare the CLI binary
+      # before vsce runs. vsce only zips files; the actual compiled
+      # dist/extension.js (declared as `main` in package.json) needs to
+      # exist first. The script also runs lint + typecheck again
+      # internally — that's fine, those tasks are turbo-cached.
+      - name: Build extension bundle
+        working-directory: packages/kilo-vscode
+        run: bun run package
+
       - name: Package .vsix
         working-directory: packages/kilo-vscode
         run: |
           # vsce reads name + version + publisher from package.json.
-          # --no-dependencies because we bundle with esbuild (Kilo's
-          # build.ts pattern) — vsce default would try to npm install
-          # the workspace deps, which doesn't apply to monorepos.
+          # --no-dependencies because we bundle with esbuild — vsce
+          # default would try to npm install the workspace deps, which
+          # doesn't apply to monorepos.
           bunx vsce package --no-dependencies --skip-license -o ../../relay.vsix
 
       - name: Upload .vsix artifact

@@ -32,7 +32,7 @@ const kiloVscodeDir = join(import.meta.dir, "..")
 const packagesDir = join(kiloVscodeDir, "..")
 const opencodeDir = join(packagesDir, "opencode")
 const coreDir = join(packagesDir, "core")
-const gatewayDir = join(packagesDir, "kilo-gateway")
+const gatewayDir = join(packagesDir, "llm-provider")
 const indexingDir = join(packagesDir, "kilo-indexing")
 const sandboxDir = join(packagesDir, "kilo-sandbox")
 
