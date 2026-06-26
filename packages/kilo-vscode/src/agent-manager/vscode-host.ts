@@ -41,7 +41,7 @@ export class VscodeHost implements Host {
     worktreeDirectories?: () => string[]
   }): PanelContext {
     const panel = vscode.window.createWebviewPanel(
-      "kilo-code.new.AgentManagerPanel",
+      "relay.new.AgentManagerPanel",
       "Agent Manager",
       vscode.ViewColumn.One,
       {

@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-const CONFIG = "kilo-code.new"
+const CONFIG = "relay.new"
 const KEY = "diff.renderMarkdown"
 
 export function getDiffMarkdownRender(): boolean {
