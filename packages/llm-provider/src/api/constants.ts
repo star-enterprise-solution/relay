@@ -9,16 +9,21 @@ export const ENV_KILO_API_URL = "RELAY_GATEWAY_URL"
 /**
  * Default Relay gateway URL.
  *
- * Relay never talks to api.kilo.ai. The gateway is either:
- *   - the user's local Docker container (default localhost:4000)
- *   - the Relay Cloud deployment (set RELAY_GATEWAY_URL=https://gateway.relay.dev)
- *   - the customer's self-hosted gateway in their VPC
+ * Relay never talks to api.kilo.ai. The gateway is one of:
+ *   - Relay Cloud, the hosted production gateway (the default below).
+ *   - A local Docker container — override with
+ *     RELAY_GATEWAY_URL=http://localhost:4000.
+ *   - A customer's self-hosted gateway in their VPC — set
+ *     RELAY_GATEWAY_URL to that cluster's service URL or external
+ *     ingress hostname.
  *
- * Legacy KILO_API_URL is honored as a fallback so the transition doesn't
- * surprise users who already had it set; can be removed once docs/configs
- * are updated.
+ * The hostname below will be replaced with the gateway.relay.dev
+ * vanity URL once DNS is configured.
+ *
+ * Legacy KILO_API_URL is honored as a fallback so the transition
+ * doesn't surprise users who already had it set.
  */
-export const DEFAULT_KILO_API_URL = "http://localhost:4000"
+export const DEFAULT_KILO_API_URL = "https://gateway-production-30d5.up.railway.app"
 
 /** Base URL for the Relay gateway. */
 export const KILO_API_BASE =
