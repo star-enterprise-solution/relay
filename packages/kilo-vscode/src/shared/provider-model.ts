@@ -1,5 +1,10 @@
 export const KILO_PROVIDER_ID = "kilo"
-export const KILO_AUTO = { providerID: KILO_PROVIDER_ID, modelID: "kilo-auto/free" } as const
+// "primary" is the model_name registered on the Relay gateway that
+// triggers the Claude → Gemini → Kimi fallback chain. The legacy value
+// here ("kilo-auto/free") referenced a free-tier model on Kilo's
+// commercial gateway — we don't proxy that. Constant identifier kept
+// because it's read through ~15 call sites; only the value changes.
+export const KILO_AUTO = { providerID: KILO_PROVIDER_ID, modelID: "primary" } as const
 export const CUSTOM_PROVIDER_PACKAGES = ["@ai-sdk/openai-compatible", "@ai-sdk/openai", "@ai-sdk/anthropic"] as const
 export type CustomProviderPackage = (typeof CUSTOM_PROVIDER_PACKAGES)[number]
 export const CUSTOM_PROVIDER_PACKAGE: CustomProviderPackage = "@ai-sdk/openai-compatible"

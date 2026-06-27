@@ -1135,7 +1135,7 @@ export const dict = {
   "deviceAuth.toast.codeCopied": "Kod kopiran u međuspremnik",
   "deviceAuth.toast.errorCopied": "Greška kopirana u međuspremnik",
   "deviceAuth.status.initiating": "Pokretanje prijave...",
-  "deviceAuth.title": "Prijavite se u Kilo Code",
+  "deviceAuth.title": "Prijavite se u Relay",
   "deviceAuth.step1": "Korak 1: Otvorite ovaj URL",
   "deviceAuth.action.copyUrl": "Kopiraj URL",
   "deviceAuth.action.openBrowser": "Otvori preglednik",
@@ -1156,7 +1156,7 @@ export const dict = {
 
   "profile.title": "Profil",
   "profile.notLoggedIn": "Niste prijavljeni",
-  "profile.action.login": "Prijavite se putem Kilo Code",
+  "profile.action.login": "Prijavite se putem Relay",
   "profile.balance.title": "Stanje",
   "profile.balance.refresh": "Osvježi stanje",
   "profile.action.dashboard": "Kontrolna ploča",
@@ -1176,11 +1176,11 @@ export const dict = {
 
   "settings.experimental.title": "Eksperimentalno",
   "settings.language.title": "Jezik",
-  "settings.aboutKiloCode.title": "O Kilo Code-u",
+  "settings.aboutKiloCode.title": "O Relay-u",
 
   "session.messages.empty": "Započnite razgovor unosom poruke ispod.",
   "session.messages.welcome":
-    "Kilo Code je AI asistent za programiranje. Zatražite da gradi funkcionalnosti, ispravlja greške ili objasni vašu bazu koda.",
+    "Relay je AI asistent za programiranje. Zatražite da gradi funkcionalnosti, ispravlja greške ili objasni vašu bazu koda.",
   "session.messages.scrollToBottom": "Pomakni se na dno",
   "session.messages.initializing": "Inicijalizacija...",
   "session.messages.taskStarting": "Pokretanje...",
@@ -1232,7 +1232,7 @@ export const dict = {
   "settings.aboutKiloCode.port.label": "Port:",
   "settings.aboutKiloCode.versionInfo": "Informacije o verziji",
   "settings.aboutKiloCode.version.label": "Verzija:",
-  "settings.aboutKiloCode.extensionName": "Kilo Code ekstenzija",
+  "settings.aboutKiloCode.extensionName": "Relay ekstenzija",
   "settings.aboutKiloCode.community": "Zajednica i podrška",
   "settings.aboutKiloCode.feedback.prefix": "Ako imate pitanja ili povratne informacije, slobodno otvorite issue na",
   "settings.aboutKiloCode.feedback.or": "ili",
@@ -1275,7 +1275,7 @@ export const dict = {
   "settings.browser.headless.title": "Headless način",
   "settings.browser.headless.description": "Pokreni u headless načinu (bez vidljivog prozora preglednika).",
 
-  "settings.language.description": 'Odaberite jezik za Kilo Code sučelje. "Auto" koristi jezik prikaza VS Code-a.',
+  "settings.language.description": 'Odaberite jezik za Relay sučelje. "Auto" koristi jezik prikaza VS Code-a.',
   "settings.language.auto": "Auto (VS Code jezik)",
   "settings.language.current": "Trenutni:",
 
@@ -1574,12 +1574,12 @@ export const dict = {
   "settings.legacyMigration.link": "Migriraj sa prethodne verzije",
   "settings.aboutKiloCode.legacyMigration.title": "Migracija sa prethodne verzije",
   "settings.aboutKiloCode.legacyMigration.description":
-    "Migrirajte postavke iz prethodne instalacije Kilo Code, uključujući API ključeve provajdera i podrazumijevani model.",
+    "Migrirajte postavke iz prethodne instalacije Relay, uključujući API ključeve provajdera i podrazumijevani model.",
   "settings.aboutKiloCode.rooImport.description": "Uvezite historiju razgovora iz instalacije Roo Code.",
   "settings.aboutKiloCode.rooImport.button": "Uvezi sesije iz Roo Code",
 
   // Screen 1 — What's New
-  "migration.whatsNew.title": "Šta je novo u Kilo Code",
+  "migration.whatsNew.title": "Šta je novo u Relay",
   "migration.whatsNew.subtitle": "Ponovo smo izgradili ekstenziju na bržem i efikasnijem temelju.",
   "migration.whatsNew.features.performance.title": "Brže performanse agenta",
   "migration.whatsNew.features.performance.detail":

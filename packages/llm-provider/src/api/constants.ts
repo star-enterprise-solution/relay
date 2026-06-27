@@ -56,11 +56,29 @@ export const KILO_OPENROUTER_BASE = `${KILO_API_BASE}/v1`
 /** Device auth polling interval in milliseconds */
 export const POLL_INTERVAL_MS = 3000
 
-/** Default model for authenticated users */
-export const DEFAULT_MODEL = "kilo-auto/free"
+/**
+ * Default model used when no profile-selected model is available.
+ *
+ * Resolves to a stable model_name registered on the Relay gateway:
+ *   - "primary"   triggers the multi-provider fallback chain
+ *                 (Claude → Gemini → Kimi). The model the user
+ *                 actually gets depends on which provider's BYOK
+ *                 key is set and healthy.
+ *   - A direct provider/model name (e.g. "anthropic/claude-sonnet-4-6")
+ *     pins to one provider via the gateway's pass-through alias.
+ *
+ * We default to "primary" so a fresh install with only an Anthropic
+ * key configured still works AND benefits from automatic failover
+ * when Anthropic returns 429/5xx.
+ *
+ * NOT "kilo-auto/free" anymore — that was a Kilo Code gateway alias
+ * for "the free model of the day" backed by Kilo's commercial
+ * inference. Relay is BYOK; there's no free model.
+ */
+export const DEFAULT_MODEL = "primary"
 
-/** Default model for anonymous/free usage */
-export const DEFAULT_FREE_MODEL = "kilo-auto/free"
+/** Same as DEFAULT_MODEL — Relay doesn't distinguish free vs paid. */
+export const DEFAULT_FREE_MODEL = "primary"
 
 /** Token expiration duration in milliseconds (1 year) */
 export const TOKEN_EXPIRATION_MS = 365 * 24 * 60 * 60 * 1000

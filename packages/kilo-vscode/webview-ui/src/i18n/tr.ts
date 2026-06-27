@@ -1084,7 +1084,7 @@ export const dict = {
   "deviceAuth.toast.codeCopied": "Kod panoya kopyalandı",
   "deviceAuth.toast.errorCopied": "Hata panoya kopyalandı",
   "deviceAuth.status.initiating": "Giriş başlatılıyor...",
-  "deviceAuth.title": "Kilo Code'a giriş yap",
+  "deviceAuth.title": "Relay'a giriş yap",
   "deviceAuth.step1": "Adım 1: Bu URL'yi açın",
   "deviceAuth.action.copyUrl": "URL'yi Kopyala",
   "deviceAuth.action.openBrowser": "Tarayıcıyı Aç",
@@ -1105,7 +1105,7 @@ export const dict = {
 
   "profile.title": "Profil",
   "profile.notLoggedIn": "Giriş yapılmadı",
-  "profile.action.login": "Kilo Code ile giriş yap",
+  "profile.action.login": "Relay ile giriş yap",
   "profile.balance.title": "Bakiye",
   "profile.balance.refresh": "Bakiyeyi yenile",
   "profile.action.dashboard": "Kontrol Paneli",
@@ -1159,11 +1159,11 @@ export const dict = {
 
   "settings.experimental.title": "Deneysel",
   "settings.language.title": "Dil",
-  "settings.aboutKiloCode.title": "Kilo Code Hakkında",
+  "settings.aboutKiloCode.title": "Relay Hakkında",
 
   "session.messages.empty": "Aşağıya bir mesaj yazarak sohbete başlayın.",
   "session.messages.welcome":
-    "Kilo Code bir yapay zeka kodlama asistanıdır. Özellik geliştirmesini, hata düzeltmesini veya kod tabanınızı açıklamasını isteyin.",
+    "Relay bir yapay zeka kodlama asistanıdır. Özellik geliştirmesini, hata düzeltmesini veya kod tabanınızı açıklamasını isteyin.",
   "session.messages.scrollToBottom": "En alta kaydır",
   "session.messages.initializing": "Başlatılıyor...",
   "session.messages.taskStarting": "Başlıyor...",
@@ -1215,7 +1215,7 @@ export const dict = {
   "settings.aboutKiloCode.port.label": "Port:",
   "settings.aboutKiloCode.versionInfo": "Sürüm Bilgisi",
   "settings.aboutKiloCode.version.label": "Sürüm:",
-  "settings.aboutKiloCode.extensionName": "Kilo Code Uzantısı",
+  "settings.aboutKiloCode.extensionName": "Relay Uzantısı",
   "settings.aboutKiloCode.community": "Topluluk ve Destek",
   "settings.aboutKiloCode.feedback.prefix":
     "Herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen şu adreste bir sorun açın:",
@@ -1259,7 +1259,7 @@ export const dict = {
   "settings.browser.headless.description": "Başsız modda çalıştır (görünür tarayıcı penceresi yok).",
 
   "settings.language.description":
-    '"Otomatik" VS Code görüntüleme dilinizi kullanır. Kilo Code arayüzü için dil seçin.',
+    '"Otomatik" VS Code görüntüleme dilinizi kullanır. Relay arayüzü için dil seçin.',
   "settings.language.auto": "Otomatik (VS Code dili)",
   "settings.language.current": "Mevcut:",
 
@@ -1542,12 +1542,12 @@ export const dict = {
   "settings.legacyMigration.link": "Eski Sürümden Taşı",
   "settings.aboutKiloCode.legacyMigration.title": "Eski Sürüm Taşıma",
   "settings.aboutKiloCode.legacyMigration.description":
-    "Sağlayıcı API anahtarları ve varsayılan model dahil olmak üzere Kilo Code'un önceki yüklemesinden ayarları taşıyın.",
+    "Sağlayıcı API anahtarları ve varsayılan model dahil olmak üzere Relay'un önceki yüklemesinden ayarları taşıyın.",
   "settings.aboutKiloCode.rooImport.description": "Bir Roo Code yüklemesinden konuşma geçmişini içe aktarın.",
   "settings.aboutKiloCode.rooImport.button": "Roo Code'dan Oturumları İçe Aktar",
 
   // Screen 1 — What's New
-  "migration.whatsNew.title": "Kilo Code'daki Yenilikler",
+  "migration.whatsNew.title": "Relay'daki Yenilikler",
   "migration.whatsNew.badge": "Beta",
   "migration.whatsNew.subtitle": "Uzantıyı daha hızlı ve daha verimli bir temel üzerine yeniden inşa ettik.",
   "migration.whatsNew.features.performance.title": "Daha Hızlı Ajan Performansı",

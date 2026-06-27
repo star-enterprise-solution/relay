@@ -12,15 +12,18 @@ interface WelcomeEmptyStateProps {
   onShowHistory?: () => void
 }
 
+// Logo shown in the empty welcome state inside the agent panel.
+// Uses the same SVG bolt we ship for the activity bar — VS Code's
+// icon theming flips it monochrome to match light/dark automatically.
 export const KiloLogo = () => {
   const icons = (window as { ICONS_BASE_URI?: string }).ICONS_BASE_URI || ""
   const light =
     document.body.classList.contains("vscode-light") || document.body.classList.contains("vscode-high-contrast-light")
-  const file = light ? "kilo-light.svg" : "kilo-dark.svg"
+  const file = light ? "relay-light.svg" : "relay-dark.svg"
 
   return (
     <div class="kilo-logo">
-      <img src={`${icons}/${file}`} alt="Kilo Code" />
+      <img src={`${icons}/${file}`} alt="Relay" />
     </div>
   )
 }

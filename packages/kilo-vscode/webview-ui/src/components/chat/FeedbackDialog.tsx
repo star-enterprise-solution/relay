@@ -14,11 +14,11 @@ const KiloLogo = (): JSX.Element => {
   const iconsBaseUri = (window as { ICONS_BASE_URI?: string }).ICONS_BASE_URI || ""
   const isLight =
     document.body.classList.contains("vscode-light") || document.body.classList.contains("vscode-high-contrast-light")
-  const iconFile = isLight ? "kilo-light.svg" : "kilo-dark.svg"
+  const iconFile = isLight ? "relay-light.svg" : "relay-dark.svg"
 
   return (
     <div class="feedback-dialog-logo">
-      <img src={`${iconsBaseUri}/${iconFile}`} alt="Kilo Code" />
+      <img src={`${iconsBaseUri}/${iconFile}`} alt="Relay" />
     </div>
   )
 }
