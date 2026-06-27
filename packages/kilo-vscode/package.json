@@ -2,7 +2,7 @@
   "name": "relay",
   "displayName": "Relay: Resilient AI Coding Agent",
   "description": "AI coding agent with spec-driven development and multi-provider resilience. Bring your own API keys (Anthropic, Gemini, Moonshot) and never get blocked by a single provider outage. Features inline chat, automated refactoring, terminal control, and customizable agent modes.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "icon": "assets/icons/logo-outline-black.png",
   "galleryBanner": {
     "color": "#FFFFFF",
@@ -80,9 +80,9 @@
       "activitybar": [
         {
           "id": "relay-ActivityBar",
-          "title": "Kilo Code",
-          "icon": "assets/icons/kilo-light.png",
-          "darkIcon": "assets/icons/kilo-dark.png"
+          "title": "Relay",
+          "icon": "assets/icons/relay-light.svg",
+          "darkIcon": "assets/icons/relay-dark.svg"
         }
       ]
     },
@@ -91,7 +91,7 @@
         {
           "type": "webview",
           "id": "relay.SidebarProvider",
-          "name": "Kilo Code"
+          "name": "Relay"
         }
       ]
     },
@@ -99,43 +99,43 @@
       {
         "command": "relay.new.plusButtonClicked",
         "title": "New Task",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(add)"
       },
       {
         "command": "relay.new.agentManagerOpen",
         "title": "Agent Manager",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(organization)"
       },
       {
         "command": "relay.new.kiloClawOpen",
-        "title": "KiloClaw",
-        "category": "Kilo Code",
+        "title": "Relay Cloud",
+        "category": "Relay",
         "icon": "$(comment-discussion)"
       },
       {
         "command": "relay.new.marketplaceButtonClicked",
         "title": "Marketplace",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(extensions)"
       },
       {
         "command": "relay.new.historyButtonClicked",
         "title": "History",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(history)"
       },
       {
         "command": "relay.new.profileButtonClicked",
         "title": "Profile",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(account)"
       },
       {
         "command": "relay.new.settingsButtonClicked",
         "title": "Settings",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(settings-gear)"
       },
       {
@@ -150,7 +150,7 @@
       },
       {
         "command": "relay.new.sidebarTitle.kiloClawOpen",
-        "title": "KiloClaw",
+        "title": "Relay Cloud",
         "icon": "$(comment-discussion)"
       },
       {
@@ -176,7 +176,7 @@
       {
         "command": "relay.new.openInTab",
         "title": "Open in Tab",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": {
           "light": "assets/icons/kilo-light.svg",
           "dark": "assets/icons/kilo-dark.svg"
@@ -185,171 +185,171 @@
       {
         "command": "relay.new.showChanges",
         "title": "Show Changes",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.openMigrationWizard",
         "title": "Migrate Settings from Legacy Version",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.autocomplete.generateSuggestions",
         "title": "Generate Suggested Edits",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.autocomplete.cancelSuggestions",
         "title": "Cancel Suggested Edits",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.autocomplete.nextEdit.acceptOrJump",
         "title": "Next Edit: Accept or Jump to Suggested Edit",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.autocomplete.nextEdit.dismiss",
         "title": "Next Edit: Dismiss Pending Suggestion",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.previousSession",
         "title": "Agent Manager: Previous Session",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.nextSession",
         "title": "Agent Manager: Next Session",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.previousTab",
         "title": "Agent Manager: Previous Tab",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.nextTab",
         "title": "Agent Manager: Next Tab",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.search",
         "title": "Agent Manager: Search Worktrees and Sessions",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.showTerminal",
         "title": "Agent Manager: Focus Terminal",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(terminal)"
       },
       {
         "command": "relay.new.agentManager.runScript",
         "title": "Agent Manager: Run Script",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(play)"
       },
       {
         "command": "relay.new.agentManager.toggleDiff",
         "title": "Agent Manager: Toggle Diff Panel",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(diff)"
       },
       {
         "command": "relay.new.agentManager.showShortcuts",
         "title": "Agent Manager: Show Keyboard Shortcuts",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": "$(keyboard)"
       },
       {
         "command": "relay.new.agentManager.newTab",
         "title": "Agent Manager: New Tab",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.newTerminal",
         "title": "Agent Manager: New Terminal Tab (Experimental)",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.closeTab",
         "title": "Agent Manager: Close Tab",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.newWorktree",
         "title": "Agent Manager: New Worktree",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.openWorktree",
         "title": "Agent Manager: Open Worktree",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.openPR",
         "title": "Agent Manager: Open Pull Request",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.closeWorktree",
         "title": "Agent Manager: Close Worktree",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.advancedWorktree",
         "title": "Agent Manager: Advanced New Worktree",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo1",
         "title": "Agent Manager: Jump to Item 1",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo2",
         "title": "Agent Manager: Jump to Item 2",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo3",
         "title": "Agent Manager: Jump to Item 3",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo4",
         "title": "Agent Manager: Jump to Item 4",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo5",
         "title": "Agent Manager: Jump to Item 5",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo6",
         "title": "Agent Manager: Jump to Item 6",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo7",
         "title": "Agent Manager: Jump to Item 7",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo8",
         "title": "Agent Manager: Jump to Item 8",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.agentManager.jumpTo9",
         "title": "Agent Manager: Jump to Item 9",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.generateCommitMessage",
         "title": "Generate Commit Message",
-        "category": "Kilo Code",
+        "category": "Relay",
         "icon": {
           "light": "assets/icons/kilo-light.svg",
           "dark": "assets/icons/kilo-dark.svg"
@@ -358,77 +358,77 @@
       {
         "command": "relay.new.explainCode",
         "title": "Explain Code",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.fixCode",
         "title": "Fix Code",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.improveCode",
         "title": "Improve Code",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.addToContext",
         "title": "Add to Context",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.terminalAddToContext",
         "title": "Add Terminal Content to Context",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.terminalFixCommand",
         "title": "Fix This Command",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.terminalExplainCommand",
         "title": "Explain This Command",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.focusChatInput",
         "title": "Focus Chat Input",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.cycleAgentMode",
         "title": "Cycle Agent Mode",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.cyclePreviousAgentMode",
         "title": "Cycle Previous Agent Mode",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.toggleAutoApprove",
         "title": "Toggle Auto-Approve",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.generateTerminalCommand",
         "title": "Generate Terminal Command",
-        "category": "Kilo Code"
+        "category": "Relay"
       },
       {
         "command": "relay.new.takeHeapSnapshot",
         "title": "Take Heap Snapshot",
-        "category": "Kilo Code"
+        "category": "Relay"
       }
     ],
     "submenus": [
       {
         "id": "relay.new.editorContextMenu",
-        "label": "Kilo Code"
+        "label": "Relay"
       },
       {
         "id": "relay.new.terminalContextMenu",
-        "label": "Kilo Code"
+        "label": "Relay"
       }
     ],
     "menus": {
@@ -809,7 +809,7 @@
       }
     ],
     "configuration": {
-      "title": "Kilo Code",
+      "title": "Relay",
       "properties": {
         "relay.new.language": {
           "type": "string",

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Activity-bar icon shown on a LIGHT theme — VS Code recolors monochrome
+SVGs to currentColor, so this is just a stroked bolt outline with no
+fill. Same shape as relay-dark.svg; only the source file split exists
+for parity with the assets/ directory convention.
+-->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M13.5 2 4 13.5h6.5L9 22l9.5-11.5H12l1.5-8.5Z"
+        stroke="currentColor" stroke-width="1.6"
+        stroke-linejoin="round" fill="currentColor" fill-opacity="0.08"/>
+</svg>

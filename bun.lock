@@ -282,7 +282,7 @@
     },
     "packages/kilo-vscode": {
       "name": "relay",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "dependencies": {
         "@anthropic-ai/sdk": "^0.39.0",
         "@kilocode/kilo-i18n": "workspace:*",
