@@ -3763,7 +3763,7 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
       styleUri: webview.asWebviewUri(vscode.Uri.joinPath(this.extensionUri, "dist", "webview.css")),
       iconsBaseUri: webview.asWebviewUri(vscode.Uri.joinPath(this.extensionUri, "assets", "icons")),
       workerUri: webview.asWebviewUri(vscode.Uri.joinPath(this.extensionUri, "dist", "shiki-worker.js")),
-      title: "Kilo Code",
+      title: "Relay",
       port: this.connectionService.getServerInfo()?.port,
       extraStyles: `.container { height: 100%; display: flex; flex-direction: column; height: 100vh; border-right: 1px solid var(--border-weak-base); }`,
     })
