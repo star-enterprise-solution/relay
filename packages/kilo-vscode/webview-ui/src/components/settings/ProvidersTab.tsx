@@ -179,14 +179,23 @@ const ProvidersTab: Component = () => {
                 color: "var(--vscode-foreground)",
               }}
             >
-              Kilo Gateway
+              Relay Gateway
             </span>
             <Show
               when={kiloLoggedIn()}
               fallback={
-                <Button size="small" variant="secondary" onClick={() => server.goToLogin()}>
-                  {language.t("common.signIn")}
-                </Button>
+                <div style={{ display: "flex", gap: "8px" }}>
+                  <Button
+                    size="small"
+                    variant="primary"
+                    onClick={() => dialog.show(() => <ProviderConnectDialog providerID={KILO_PROVIDER_ID} />)}
+                  >
+                    Paste API Key
+                  </Button>
+                  <Button size="small" variant="secondary" onClick={() => server.goToLogin()}>
+                    {language.t("common.signIn")}
+                  </Button>
+                </div>
               }
             >
               <Tag>{language.t("settings.providers.tag.gateway")}</Tag>

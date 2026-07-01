@@ -88,15 +88,23 @@ export async function fetchKiloModels(options?: {
   const organizationId = options?.kilocodeOrganizationId
 
   // Construct base URL
-  const defaultBaseURL = organizationId ? `${KILO_API_BASE}/api/organizations/${organizationId}` : KILO_OPENROUTER_BASE
+  const defaultBaseURL = organizationId ? `${KILO_API_BASE}/api/organizations/${organizationId}` : KILO_API_BASE
 
   const baseURL = options?.baseURL ?? defaultBaseURL
 
   // Transform URL with token if available
   const finalBaseURL = token ? getKiloUrlFromToken(baseURL, token) : baseURL
 
-  // Construct models endpoint
-  const modelsURL = `${finalBaseURL}/models`
+  // Construct models endpoint.
+  // The Relay gateway serves a CURATED, opinionated catalog at
+  // /api/openrouter/models (handful of vetted models with full pricing
+  // + tool support) — that's what the model picker should show.
+  // /v1/models on the same gateway lists every alias LiteLLM knows
+  // about (hundreds of entries, most untested), which is too much
+  // noise for the picker.
+  const modelsURL = organizationId
+    ? `${finalBaseURL}/models`
+    : `${finalBaseURL}/api/openrouter/models`
 
   const response = await fetch(modelsURL, {
     headers: {
