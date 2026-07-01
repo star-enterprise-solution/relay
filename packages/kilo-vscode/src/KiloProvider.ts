@@ -127,6 +127,7 @@ import {
   fetchAndSendPendingQuestions,
 } from "./kilo-provider/handlers/question"
 import { fetchAndSendPendingSuggestions } from "./kilo-provider/handlers/suggestion"
+import { handleRelayMessage } from "./kilo-provider/handlers/relay"
 import { nativeTitle } from "./kilo-provider/native-tab-title"
 import { parseReview, reviewMetadata, type ReviewMessageData } from "./shared/review-comments"
 
@@ -859,6 +860,18 @@ export class KiloProvider implements vscode.WebviewViewProvider, TelemetryProper
           continueInWorktree: this.continueInWorktreeHandler ?? undefined,
         })
       ) {
+        return
+      }
+      if (
+        typeof (message as { type?: unknown })?.type === "string" &&
+        (message as { type: string }).type.startsWith("relay/")
+      ) {
+        if (this.extensionContext) {
+          await handleRelayMessage(message as { type: string; [k: string]: unknown }, {
+            context: this.extensionContext,
+            postMessage: (m) => this.postMessage(m),
+          })
+        }
         return
       }
       this.visibleTaskStreams.handle(message)
