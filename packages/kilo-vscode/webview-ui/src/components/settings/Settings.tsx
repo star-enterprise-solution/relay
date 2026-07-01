@@ -22,6 +22,7 @@ import CommitMessageTab from "./CommitMessageTab"
 import ExperimentalTab from "./ExperimentalTab"
 import LanguageTab from "./LanguageTab"
 import AboutKiloCodeTab from "./AboutKiloCodeTab"
+import RelayTab from "./RelayTab"
 import IndexingTab from "./IndexingTab"
 import SandboxingTab from "./SandboxingTab"
 import * as Sandboxing from "./sandboxing"
@@ -154,6 +155,10 @@ const Settings: Component<SettingsProps> = (props) => {
         style={{ flex: 1, overflow: "hidden" }}
       >
         <Tabs.List>
+          <Tabs.Trigger value="relay" aria-label="Relay">
+            <Icon name="link" />
+            <span class="label">Relay</span>
+          </Tabs.Trigger>
           <Tabs.Trigger value="models" aria-label={language.t("settings.models.title")}>
             <Icon name="models" />
             <span class="label">{language.t("settings.models.title")}</span>
@@ -225,6 +230,10 @@ const Settings: Component<SettingsProps> = (props) => {
           </Tabs.Trigger>
         </Tabs.List>
 
+        <Tabs.Content value="relay">
+          <h3>Relay</h3>
+          <RelayTab />
+        </Tabs.Content>
         <Tabs.Content value="models">
           <h3>{language.t("settings.models.title")}</h3>
           <ModelsTab />
