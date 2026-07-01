@@ -49,9 +49,12 @@ export async function handleRelayMessage(
     case "relay/testConnection": {
       const gatewayUrl = String(msg.gatewayUrl ?? "").trim()
       const virtualKey = String(msg.virtualKey ?? "").trim()
+      const controller = new AbortController()
+      const timer = setTimeout(() => controller.abort(), 10_000)
       try {
         const url = gatewayUrl.replace(/\/+$/, "") + "/v1/models"
         const res = await fetch(url, {
+          signal: controller.signal,
           headers: { Authorization: `Bearer ${virtualKey}` },
         })
         if (res.status === 401 || res.status === 403) {
@@ -77,14 +80,18 @@ export async function handleRelayMessage(
           modelCount: Array.isArray(body.data) ? body.data.length : 0,
         })
       } catch (err) {
+        const isTimeout = err instanceof Error && err.name === "AbortError"
         postMessage({
           type: "relay/testResult",
           ok: false,
-          error:
-            err instanceof Error
+          error: isTimeout
+            ? "Gateway did not respond within 10 s."
+            : err instanceof Error
               ? `Cannot reach gateway: ${err.message}`
               : "Cannot reach gateway",
         })
+      } finally {
+        clearTimeout(timer)
       }
       return
     }
